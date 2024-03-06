@@ -25,9 +25,9 @@ jobs:
         if: runner.os == 'Linux'
         run: export PYTHONPATH=src
 
-      - name: setting pypath app in windows
-        if: runner.os == 'Windows'
-        run: $env:PYTHONPATH += src
+      # - name: setting pypath app in windows
+      #   if: runner.os == 'Windows'
+      #   run: $env:PYTHONPATH += src
 
       - name: testing app
         run: pytest

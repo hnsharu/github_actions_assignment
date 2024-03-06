@@ -23,8 +23,11 @@ jobs:
 
       - name: testing app
         run: |
-            export PYTHONPATH=src
-        shell: bash
+            if [[ "${{matrix.os}}" =="Windows"]]; then
+              $env:PYTHONPATH += src
+            else
+              export PYTHONPATH=src
+        
 
 
 

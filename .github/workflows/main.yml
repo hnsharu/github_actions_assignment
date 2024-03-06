@@ -1,0 +1,34 @@
+name: gitaction_assignment
+
+on: 
+  push:
+    branches: [master]
+
+jobs:
+  bulidtest:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest,ubuntu-latest]
+        python_ver : [3.6,3.7]
+
+    steps:
+      -uses: actions/checkout@v3
+      -name: install dependencis
+       run: |
+           pip install -r requirements.txt
+      -name: bulid code
+       run: |
+           if [[ "${{ runner.os }}" == "Windows" ]]; then 
+            get PYTHONPATH=src
+          else
+            export PYTHONPATH=src
+          fi
+
+           
+      
+      
+    
+
+  
+      

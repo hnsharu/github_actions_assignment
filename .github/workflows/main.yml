@@ -11,6 +11,8 @@ jobs:
       matrix:
         os: [windows-latest,ubuntu-latest]
         python_ver : [3.6,3.7]
+    env:
+      PYTHONPATH: "src"
 
     steps:
       - uses: actions/checkout@v3
@@ -22,15 +24,7 @@ jobs:
         run: python src/calculate_area.py
 
       - name: testing app in ubantu
-        if: runner.os == 'Linux'
-        run: |
-          export PYTHONPATH=src
-          pytest
-
-      - name: testing app in windows
-        if: runner.os == 'Windows'
-        run: |
-          $env:PYTHONPATH += "src"
+        run:
           pytest
 
      

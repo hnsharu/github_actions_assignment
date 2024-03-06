@@ -21,12 +21,9 @@ jobs:
       - name: running app
         run: python src/calculate_area.py
 
-      - name: testing app
-        run: |
-            if [[ "${{runner.os}}" =="windows-latest"]]; then
-              $env:PYTHONPATH += src
-            else
-              export PYTHONPATH=src
+      - name: testing app in ubantu
+        if: runner.os == 'Linux'
+        run: export PYTHONPATH=src
         
 
 

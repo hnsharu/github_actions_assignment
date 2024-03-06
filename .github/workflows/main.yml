@@ -30,7 +30,9 @@ jobs:
       #   run: $env:PYTHONPATH += src
 
       - name: testing app
-        run: pytest
+        run: |
+          export PYTHONPATH=src
+          pytest
 
 
         

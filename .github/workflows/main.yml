@@ -19,7 +19,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: running app
-        run: python calculate_area.py
+        run: python src/calculate_area.py
 
 
            

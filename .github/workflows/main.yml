@@ -21,6 +21,12 @@ jobs:
       - name: running app
         run: python src/calculate_area.py
 
+      - name: testing app
+        run: |
+            export PYTHONPATH=src
+        shell: bash
+
+
 
            
       

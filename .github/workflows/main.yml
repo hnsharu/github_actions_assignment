@@ -23,7 +23,7 @@ jobs:
 
       - name: testing app
         run: |
-            if [[ "${{matrix.os}}" =="Windows"]]; then
+            if [[ "${{runner.os}}" =="windows-latest"]]; then
               $env:PYTHONPATH += src
             else
               export PYTHONPATH=src

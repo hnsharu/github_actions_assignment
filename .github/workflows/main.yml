@@ -21,18 +21,19 @@ jobs:
       - name: running app
         run: python src/calculate_area.py
 
-      - name: setting pypath app in ubantu
+      - name: testing app in ubantu
         if: runner.os == 'Linux'
-        run: export PYTHONPATH=src
-
-      # - name: setting pypath app in windows
-      #   if: runner.os == 'Windows'
-      #   run: $env:PYTHONPATH += src
-
-      - name: testing app
         run: |
           export PYTHONPATH=src
           pytest
+
+      - name: testing app in windows
+        if: runner.os == 'Windows'
+        run: |
+          $env:PYTHONPATH += src
+          pytest
+
+     
 
 
         

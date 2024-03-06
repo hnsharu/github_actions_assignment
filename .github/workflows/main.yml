@@ -13,17 +13,11 @@ jobs:
         python_ver : [3.6,3.7]
 
     steps:
-      -uses: actions/checkout@v3
-      -name: install dependencis
-       run: |
-           pip install -r requirements.txt
-      -name: bulid code
-       run: |
-           if [[ "${{ runner.os }}" == "Windows" ]]; then 
-            get PYTHONPATH=src
-          else
-            export PYTHONPATH=src
-          fi
+      - uses: actions/checkout@v3
+      
+      - name : installing_dependencis
+        run: pip install -r requirements.txt
+
 
            
       

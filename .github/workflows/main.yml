@@ -30,7 +30,7 @@ jobs:
       - name: testing app in windows
         if: runner.os == 'Windows'
         run: |
-          $env:PYTHONPATH += src
+          $env:PYTHONPATH += "src"
           pytest
 
      

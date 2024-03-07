@@ -50,7 +50,7 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Job status Notification
           body: The job ${{job.status}}!
-          to: user@example.com
+          to: sharulhn43@gmail.com
           from: GitHub Actions
           secure: true
      

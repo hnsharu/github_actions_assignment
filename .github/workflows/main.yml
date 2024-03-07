@@ -24,8 +24,14 @@ jobs:
         run: python src/calculate_area.py
 
       - name: testing app in ubantu
-        run:
-          pytest
+        run: |
+          pytest --cov=./ --cov-report=xml
+
+      - name: Upload pytest coverage report to GitHub Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: pytest-coverage-report
+          path: coverage.xml
 
      
 

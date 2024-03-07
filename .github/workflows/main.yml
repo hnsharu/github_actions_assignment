@@ -12,7 +12,7 @@ jobs:
         os: [windows-latest,ubuntu-latest]
         python_ver : [3.6,3.7]
     env:
-      PYTHONPATH: "src"
+      PYTHONPATH: ""
 
     steps:
       - uses: actions/checkout@v3

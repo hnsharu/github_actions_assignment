@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Buildd') {
             steps {
                 sh 'pip install -r requirements.txt'
                 sh 'python src/calculate_area.py'

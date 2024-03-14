@@ -50,7 +50,7 @@ jobs:
           name: pytest-coverage-report
           path: coverage.xml
       
-      - name: Send failure email
+      - name: Send  email
         if: always()
         uses: dawidd6/action-send-mail@v3
         with:
